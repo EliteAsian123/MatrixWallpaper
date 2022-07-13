@@ -8,11 +8,12 @@ An animated wallpaper for Lively Wallpaper based on [Lively Matrix](https://gith
 - ❌ [Komorebi](https://github.com/cheesecakeufo/komorebi) (Linux)
 
 # Installing
-Refer to the [Releases Section](https://github.com/EliteAsian123/MatrixWallpaper/releases/). Use the instructions for the latest version to install the wallpaper for the application of choice.
+Please refer to the [releases section](https://github.com/EliteAsian123/MatrixWallpaper/releases/) and read the instructions on the lastest release.
 
 # Building
 Run the following:
 ```bash
+$ git clone https://github.com/EliteAsian123/MatrixWallpaper.git
 $ npm install
 
 $ npm run buildLively # For Lively Wallpaper
