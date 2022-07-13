@@ -1,0 +1,14 @@
+{
+	"name": "matrixwallpaper",
+	"version": "1.0.0",
+	"description": "Wallpaper",
+	"type": "module",
+	"scripts": {
+		"buildLively": "node ./buildLively.js"
+	},
+	"author": "EliteAsian123",
+	"license": "MIT",
+	"dependencies": {
+		"archiver": "^5.3.1"
+	}
+}

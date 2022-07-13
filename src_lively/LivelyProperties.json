@@ -1,0 +1,36 @@
+{
+	"matrixColor": {
+		"text": "Matrix Color (if not Rainbow)",
+		"type": "color",
+		"value": "#00FF46"
+	},
+	"rainbow": {
+		"text": "Rainbow",
+		"type": "checkbox",
+		"value": true
+	},
+	"rainbowSpeed": {
+		"text": "Rainbow Speed",
+		"type": "slider",
+		"max": 25,
+		"min": 1,
+		"tick": 5,
+		"value": 1
+	},
+	"matrixSpeed": {
+		"text": "Matrix Speed (ms)",
+		"type": "slider",
+		"max": 100,
+		"min": 20,
+		"tick": 25,
+		"value": 60
+	},
+	"matrixSize": {
+		"text": "Matrix Size",
+		"type": "slider",
+		"max": 48,
+		"min": 4,
+		"tick": 48,
+		"value": 12
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"AppVersion": "1.0.0.0",
+	"Title": "Matrix Wallpaper",
+	"Thumbnail": "thumbnail.jpg",
+	"Preview": "preview.gif",
+	"Desc": "Matrix Wallpaper by EliteAsian123. Original can be seen here: https://github.com/bad1dea/lively_matrix5",
+	"Author": "EliteAsian123 (Original by parambirs, khuong)",
+	"License": "MIT License",
+	"Contact": "https://github.com/EliteAsian123/MatrixWallpaper",
+	"Type": 1,
+	"FileName": "index.html"
+}
