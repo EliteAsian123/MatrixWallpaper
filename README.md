@@ -5,7 +5,7 @@ An animated wallpaper for Lively Wallpaper based on [Lively Matrix](https://gith
 
 # Compatibility
 - ✔ [Lively Wallpaper](https://github.com/rocksdanister/lively) (Windows)
-- ❌ [Komorebi (Fork)](https://github.com/Komorebi-Fork/komorebi) *soon* (Linux)
+- ✔ [Komorebi (Fork)](https://github.com/Komorebi-Fork/komorebi) (Linux)
 
 # Installing
 Please refer to the [releases section](https://github.com/EliteAsian123/MatrixWallpaper/releases/) and read the instructions on the lastest release.
