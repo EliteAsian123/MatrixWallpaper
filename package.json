@@ -4,7 +4,8 @@
 	"description": "Wallpaper",
 	"type": "module",
 	"scripts": {
-		"buildLively": "node ./buildLively.js"
+		"buildLively": "node ./buildLively.js",
+		"buildKomorebi": "node ./buildKomorebi.js"
 	},
 	"author": "EliteAsian123",
 	"license": "MIT",
