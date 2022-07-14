@@ -1,11 +1,11 @@
 # MatrixWallpaper
-An animated wallpaper for Lively Wallpaper based on [Lively Matrix](https://github.com/bad1dea/lively_matrix).
+An animated wallpaper for Lively Wallpaper based on [Lively Matrix](https://github.com/bad1dea/lively_matrix). A live demo can be seen [here](https://eliteasian123.github.io/MatrixWallpaper/src/).
 
 ![Preview](./src_lively/preview.gif)
 
 # Compatibility
 - ✔ [Lively Wallpaper](https://github.com/rocksdanister/lively) (Windows)
-- ❌ [Komorebi](https://github.com/cheesecakeufo/komorebi) (Linux)
+- ❌ [Komorebi (Fork)](https://github.com/Komorebi-Fork/komorebi) *soon* (Linux)
 
 # Installing
 Please refer to the [releases section](https://github.com/EliteAsian123/MatrixWallpaper/releases/) and read the instructions on the lastest release.
