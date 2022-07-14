@@ -17,4 +17,5 @@ $ git clone https://github.com/EliteAsian123/MatrixWallpaper.git
 $ npm install
 
 $ npm run buildLively # For Lively Wallpaper
+$ npm run buildKomorebi # For Komorebi (Fork)
 ```
