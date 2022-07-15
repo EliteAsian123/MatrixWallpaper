@@ -20,6 +20,15 @@ let ctx = c.getContext("2d");
 let hue;
 let drops;
 
+function updateFromURL() {
+	const urlParams = new URLSearchParams(window.location.search);
+	let urlSettings = JSON.parse(urlParams.get("s"));
+	if (urlSettings) {
+		settings = { ...settings, ...urlSettings };
+		console.log(settings);
+	}
+}
+
 function init() {
 	hue = 0;
 
@@ -121,5 +130,6 @@ function hexToRgb(hex) {
 	} : null;
 }
 
+updateFromURL();
 init();
 draw();
