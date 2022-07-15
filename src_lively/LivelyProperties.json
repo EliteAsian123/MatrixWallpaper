@@ -12,10 +12,26 @@
 	"rainbowSpeed": {
 		"text": "Rainbow Speed",
 		"type": "slider",
-		"max": 25,
+		"max": 200,
 		"min": 1,
-		"tick": 5,
-		"value": 1
+		"tick": 50,
+		"value": 7
+	},
+	"rainbowLightness": {
+		"text": "Rainbow Lightness",
+		"type": "slider",
+		"max": 100,
+		"min": 0,
+		"tick": 10,
+		"value": 60
+	},
+	"rainbowSaturation": {
+		"text": "Rainbow Saturation",
+		"type": "slider",
+		"max": 100,
+		"min": 0,
+		"tick": 10,
+		"value": 100
 	},
 	"matrixSpeed": {
 		"text": "Matrix Speed (ms)",

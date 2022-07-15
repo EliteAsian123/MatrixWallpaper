@@ -2,31 +2,26 @@ const characters = "゠アイウエオカキクケコサシスセソタチツテ
 
 let settings = {
 	color: {
-		r: 125,
-		g: 52,
-		b: 253
+		r: 0,
+		g: 255,
+		b: 70
 	},
-	rainbowSpeed: 0.01,
+	rainbowSpeed: 1.75,
 	rainbow: true,
+	rainbowLightness: 60,
+	rainbowSaturation: 100,
 	speed: 60,
-	size: 12
+	size: 12,
 };
 
-let hueFw;
+let c = document.getElementById("c");
+let ctx = c.getContext("2d");
+
 let hue;
-let c;
-let ctx;
 let drops;
 
 function init() {
-	//clearTimeout(draw);
-
-	hueFw = false;
-	hue = -0.01;
-
-	// Get the canvas
-	c = document.getElementById("c");
-	ctx = c.getContext("2d");
+	hue = 0;
 
 	// Make the canvas full screen
 	c.height = window.innerHeight;
@@ -48,11 +43,12 @@ function init() {
 }
 
 function draw() {
+	// Set fonts
+	ctx.font = settings.size + "px arial";
+
+	// Fade out the old drops
 	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
 	ctx.fillRect(0, 0, c.width, c.height);
-
-	ctx.fillStyle = "#BBB";
-	ctx.font = settings.size + "px arial";
 
 	// Foreach drop...
 	for (let i = 0; i < drops.length; i++) {
@@ -63,15 +59,11 @@ function draw() {
 		// Get a character
 		let text = characters[Math.floor(Math.random() * characters.length)];
 
-		// Rainbow!!!
+		// Set color
 		if (settings.rainbow) {
-			hue += (hueFw) ? 0.01 : -0.01;
-			let rr = Math.floor(127 * Math.sin(settings.rainbowSpeed * hue + 0) + 128);
-			let rg = Math.floor(127 * Math.sin(settings.rainbowSpeed * hue + 2) + 128);
-			let rb = Math.floor(127 * Math.sin(settings.rainbowSpeed * hue + 4) + 128);
-			ctx.fillStyle = 'rgba(' + rr + ',' + rg + ',' + rb + ')';
+			ctx.fillStyle = `hsl(${hue}, ${settings.rainbowSaturation}%, ${settings.rainbowLightness}%)`;
 		} else {
-			ctx.fillStyle = 'rgba(' + settings.color.r + ',' + settings.color.g + ',' + settings.color.b + ')';
+			ctx.fillStyle = `rgba(${settings.color.r},${settings.color.g},${settings.color.b})`;
 		}
 
 		// Draw character
@@ -86,6 +78,10 @@ function draw() {
 		}
 	}
 
+	// Update hue
+	hue += settings.rainbowSpeed;
+
+	// Request next frame
 	setTimeout(draw, settings.speed);
 }
 
@@ -98,7 +94,13 @@ function livelyPropertyListener(name, val) {
 			settings.rainbow = val;
 			break;
 		case "rainbowSpeed":
-			settings.rainbowSpeed = val / 100;
+			settings.rainbowSpeed = val / 4;
+			break;
+		case "rainbowLightness":
+			settings.rainbowLightness = val;
+			break;
+		case "rainbowSaturation":
+			settings.rainbowSaturation = val;
 			break;
 		case "matrixSpeed":
 			settings.speed = val;
