@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# Constants
+
+file="config"
+url="https\:\/\/eliteasian123.github.io\/MatrixWallpaper\/src\/"
+
+# Variables
+
+url_query="\?s=%7B"
+
+# Functions
+
+get_setting() {
+	read input
+	
+	if [ "$input" == "" ]; then
+		setting=$1
+	else
+		setting=$input
+	fi
+}
+
+# Print the settings
+
+clear
+echo
+echo "WARNING: Invalid inputs will make the wallpaper not work!"
+echo
+echo "Enter nothing for default value."
+echo
+
+echo -n "Matrix Color Red [0-255] (Default: 0): "
+get_setting "0"
+url_query="$url_query%22color%22%3A%7B%22r%22%3A$setting%2C"
+
+echo -n "Matrix Color Green [0-255] (Default: 255): "
+get_setting "255"
+url_query="$url_query%22g%22%3A$setting%2C"
+
+echo -n "Matrix Color Blue [0-255] (Default: 70): "
+get_setting "70"
+url_query="$url_query%22b%22%3A$setting%7D%2C"
+
+echo -n "Rainbow [true/false] (Default: true): "
+get_setting "true"
+url_query="$url_query%22rainbow%22%3A$setting%2C"
+
+echo -n "Rainbow Speed [0.25-50.0] (Default: 1.75): "
+get_setting "1.75"
+url_query="$url_query%22rainbowSpeed%22%3A$setting%2C"
+
+echo -n "Rainbow Lightness [0-100] (Default: 60): "
+get_setting "60"
+url_query="$url_query%22rainbowLightness%22%3A$setting%2C"
+
+echo -n "Rainbow Saturation [0-100] (Default: 100): "
+get_setting "100"
+url_query="$url_query%22rainbowSaturation%22%3A$setting%2C"
+
+echo -n "Matrix Speed in ms [20-100] (Default: 60): "
+get_setting "60"
+url_query="$url_query%22speed%22%3A$setting%2C"
+
+echo -n "Font Size [4-48] (Default: 12): "
+get_setting "12"
+url_query="$url_query%22size%22%3A$setting"
+
+echo
+url_query="$url_query%7D"
+
+# Edit the config file
+
+sed -i -e "s/\(WebPageUrl=\).*/\1$url$url_query/" $file
+
+# Done!
+
+pkill komorebi
+echo "Finished! Please rerun Komorebi!"
+echo
